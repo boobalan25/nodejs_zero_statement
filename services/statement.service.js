@@ -1,4 +1,5 @@
-
+const CryptoJS = require('crypto-js');
+require('dotenv').config();
 const Xpaths = require('../xpaths/xpaths');
 const docx = require('docx');
 const fs = require('fs');
@@ -16,6 +17,8 @@ async function example() {
 
 let StatementService = {
     async getStatement(data) {
+        data.password = CryptoJS.AES.decrypt(data.password, process.env.EncryptKey).toString(CryptoJS.enc.Utf8);
+        console.log(data.password);
         let driver = await new Builder().forBrowser('chrome').build();
         try {
             let fromDate = new Date(data.dateFrom);

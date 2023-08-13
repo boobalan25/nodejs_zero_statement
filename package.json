@@ -11,7 +11,9 @@
   "dependencies": {
     "chromedriver": "^115.0.1",
     "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
     "docx": "^8.2.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.1",
     "selenium-webdriver": "^4.11.1"
